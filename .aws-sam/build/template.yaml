@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: AWS Lambda CI/CD Pipeline with SAM
+Resources:
+  MyLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: my-lambda-function
+      Handler: src/app.handler
+      Runtime: nodejs18.x
+      CodeUri: MyLambdaFunction
+      MemorySize: 128
+      Timeout: 10
+      Environment:
+        Variables:
+          NODE_ENV: production
+      Policies:
+      - AWSLambdaBasicExecutionRole
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /myendpoint
+            Method: get
+    Metadata:
+      SamResourceId: MyLambdaFunction
