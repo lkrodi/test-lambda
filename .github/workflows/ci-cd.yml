@@ -48,12 +48,12 @@ jobs:
       - name: SAM Build
         run: sam build
 
-      # Package the application
-      - name: SAM Package
-        run: |
-          sam package \
-            --s3-bucket ${{ secrets.S3_BUCKET }} \
-            --output-template-file packaged.yaml
+      # # Package the application
+      # - name: SAM Package
+      #   run: |
+      #     sam package \
+      #       --s3-bucket ${{ secrets.S3_BUCKET }} \
+      #       --output-template-file packaged.yaml
 
       # Deploy the application
       - name: SAM Deploy
