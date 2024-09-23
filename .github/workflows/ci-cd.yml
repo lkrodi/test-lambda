@@ -62,4 +62,4 @@ jobs:
             --template-file packaged.yaml \
             --stack-name mi-stack \
             --capabilities CAPABILITY_IAM \
-            --no-confirm
+            --no-confirm-changeset
