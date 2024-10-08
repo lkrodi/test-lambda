@@ -58,7 +58,7 @@ jobs:
       # Deploy the application
       - name: SAM Deploy
         run: |
-          sam deploy \
+          sam deploy --force-upload \
             --template-file packaged.yaml \
             --stack-name mi-stack \
             --capabilities CAPABILITY_IAM \
