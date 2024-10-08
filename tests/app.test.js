@@ -1,6 +1,7 @@
 // tests/app.test.js
 
 const { handler } = require('../src/app');
+console.log("test...");
 
 test('Lambda handler returns correct response', async () => {
   const event = {};
